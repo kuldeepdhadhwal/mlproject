@@ -4,7 +4,7 @@ from datetime import datetime
 
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 log_path = os.path.join(os.getcwd(),"logs", LOG_FILE)
-os.mkdir(log_path, exist_ok=True)
+os.makedirs(log_path, exist_ok=True)
 
 LOG_FILE_PATH = os.path.join(log_path, LOG_FILE)
 
@@ -14,3 +14,6 @@ logging.basicConfig(
     format= '[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s',
     datefmt='%H:%M:%S'
 )
+
+if __name__ == "__main__":
+    logging.info("Logging is started...")
